@@ -10,6 +10,8 @@ import { appTabRoutes, authRoutes } from './Routes';
 
 import PlaceDetailModal from './src/screens/PlaceDetailModal/PlaceDetailModal';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 let store = configureStore();
 
 const AuthStack = createStackNavigator(authRoutes);
@@ -36,6 +38,7 @@ const AppStack = createStackNavigator({
     navigationOptions: ({navigation})=>{
       return {
         title: navigation.state.routes[navigation.state.index].key,
+        headerLeft: <Icon size={30} name='ios-menu'/>
       }
     },
   },

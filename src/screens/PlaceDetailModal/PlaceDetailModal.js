@@ -11,6 +11,13 @@ class PlaceDetailModal extends Component {
         };
     };
 
+    deletePlace = () => {
+        const { params } = this.props.navigation.state;
+        const placeKey = params.place.key;
+        params.deletePlace(placeKey);
+        this.props.navigation.goBack();
+    }
+
     render() {
         const { params } = this.props.navigation.state;
         return (
@@ -18,7 +25,7 @@ class PlaceDetailModal extends Component {
                 <Image source={params.place.image} style={styles.placeImage} />
                 <Text style={styles.placeName}>{params.place.name}</Text>
                 <View>
-                    <TouchableOpacity onPress={params.onItemDeleted} >
+                    <TouchableOpacity onPress={ this.deletePlace } >
                         <View style={styles.deleteButton}>
                             <Icon size={30} name='ios-trash' color='red' />
                         </View>

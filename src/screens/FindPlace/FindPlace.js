@@ -18,6 +18,7 @@ class FindPlaceScreen extends Component {
     showModal = (place) => {
         this.props.navigation.navigate('PlaceDetailModal', {
             place: place,
+            deletePlace: this.props.onDeletePlace
         })
     }
 

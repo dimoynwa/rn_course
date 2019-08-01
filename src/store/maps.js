@@ -10,6 +10,6 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return {
         onAddPlace: (name) => dispatch(addPlace(name)),
-        onDeletePlace: () => dispatch(deletePlace()),
+        onDeletePlace: (key) => dispatch(deletePlace(key)),
     };
 }

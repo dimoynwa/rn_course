@@ -31,7 +31,14 @@ const AppTab = createMaterialTopTabNavigator(appTabRoutes,
 );
 
 const AppStack = createStackNavigator({
-  AppTab: AppTab,
+  AppTab: {
+    screen: AppTab,
+    navigationOptions: ({navigation})=>{
+      return {
+        title: navigation.state.routes[navigation.state.index].key,
+      }
+    },
+  },
   PlaceDetailModal: PlaceDetailModal,
 },
   {

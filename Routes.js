@@ -9,9 +9,15 @@ import { connect } from 'react-redux';
 export const appTabRoutes = {
     FindPlace: {
         screen: connect(mapStateToProps, mapDispatchToProps)(FindPlaceScreen),
+        navigationOptions: {
+            header: null  //Need to set header as null.
+        },
     },
     SharePlace: {
         screen: connect(mapStateToProps, mapDispatchToProps)(SharePlaceScreen),
+        navigationOptions: {
+            header: null  //Need to set header as null.
+        }
     }
 }
 
